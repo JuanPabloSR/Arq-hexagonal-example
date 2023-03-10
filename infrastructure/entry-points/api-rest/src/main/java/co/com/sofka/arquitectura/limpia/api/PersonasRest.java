@@ -31,4 +31,10 @@ public class PersonasRest {
     return personaUseCase.guardarPersona(persona);
   }
 
+  @GetMapping("/buscar-por-comando")
+  public Mono<String> buscarPersonasPorComando() {
+    return personaUseCase.buscarPersonasPorComando();
+  }
+
+
 }
