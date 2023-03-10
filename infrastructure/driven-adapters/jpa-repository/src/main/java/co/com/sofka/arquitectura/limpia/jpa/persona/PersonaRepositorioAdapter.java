@@ -34,15 +34,22 @@ public class PersonaRepositorioAdapter extends AdapterOperations<Persona, Person
 
     @Override
     public Mono<Persona> crearPersona(Persona persona) {
-        PersonaData nuevaPersonaData = convertirPersonaAPersonaData(persona);
+        if(persona != null){
+            PersonaData nuevaPersonaData = convertirPersonaAPersonaData(persona);
+            repository.save(nuevaPersonaData);
+            return Mono.just(persona);
+        } else {
+            return Mono.empty();
+        }
 
-        nuevaPersonaData.setNombre(nuevaPersonaData.getNombre());
+
+/*        nuevaPersonaData.setNombre(nuevaPersonaData.getNombre());
         nuevaPersonaData.setFechaNacimiento(nuevaPersonaData.getFechaNacimiento());
         nuevaPersonaData.setTipoSangre(nuevaPersonaData.getTipoSangre());
-        nuevaPersonaData.setViajes(nuevaPersonaData.getViajes());
-        repository.save(nuevaPersonaData);
+        nuevaPersonaData.setViajes(nuevaPersonaData.getViajes());*/
 
-        return Mono.just(persona);
+
+
     }
 
     @Override

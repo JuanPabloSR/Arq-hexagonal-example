@@ -17,7 +17,6 @@ public class PersonaUseCase {
     public Mono<Persona> buscarPersonasPorId(Integer id){
         return personaRepository.buscarPersonaPorId(id);
     }
-
     public Mono<Persona> guardarPersona(Persona persona) {
         return personaRepository.crearPersona(persona);
     }

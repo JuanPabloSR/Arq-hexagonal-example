@@ -1,7 +1,6 @@
 package co.com.sofka.arquitectura.limpia.api;
 import co.com.sofka.arquitectura.limpia.model.persona.Persona;
 import co.com.sofka.arquitectura.limpia.usecase.persona.PersonaUseCase;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
